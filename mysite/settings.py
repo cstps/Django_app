@@ -57,7 +57,8 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 'DIRS': [],
+        'DIRS':[os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +124,7 @@ USE_TZ = False # 한국은 일광절약시간제를 사용하지 않으므로 �
 STATIC_URL = '/static/'
 ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = '*'
+
+
+# 템플릿 시스템은 정의가 되어 있지 않는 변수는 기본 빈 문자열이지만 지정할 수 도 있다.
+TEMPLATE_STRING_IF_INVALID =''
